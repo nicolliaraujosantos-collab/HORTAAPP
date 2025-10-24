@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #75d780;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 40px;
+}
+section {
+  background-color: #008B8B
+}
+main {
+  background-color: #75d780
+}
