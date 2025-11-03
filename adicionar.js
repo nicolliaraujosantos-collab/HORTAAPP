@@ -42,7 +42,7 @@ function removerImagem() {
   const fotoInput = document.getElementById('fotoPlanta');
   const previewContainer = document.getElementById('preview-container');
   const fileName = document.getElementById('file-name');
-  
+
   fotoInput.value = '';
   previewContainer.style.display = 'none';
   fileName.textContent = 'Escolher arquivo';
@@ -51,11 +51,11 @@ function removerImagem() {
 // Validar formulário
 function validarFormulario() {
   let isValid = true;
-  
+
   // Validar nome da planta
   const nomePlanta = document.getElementById('nomePlanta');
   const nomeError = document.getElementById('nomePlanta-error');
-  
+
   if (nomePlanta.value.trim().length < 2) {
     nomeError.textContent = 'O nome deve ter pelo menos 2 caracteres';
     nomePlanta.classList.add('error');
@@ -66,13 +66,13 @@ function validarFormulario() {
     nomePlanta.classList.remove('error');
     nomePlanta.classList.add('success');
   }
-  
+
   // Validar data do plantio
   const dataPlantio = document.getElementById('dataPlantio');
   const dataError = document.getElementById('dataPlantio-error');
   const hoje = new Date();
   const dataSelecionada = new Date(dataPlantio.value);
-  
+
   if (!dataPlantio.value) {
     dataError.textContent = 'Selecione a data do plantio';
     dataPlantio.classList.add('error');
@@ -88,7 +88,7 @@ function validarFormulario() {
     dataPlantio.classList.remove('error');
     dataPlantio.classList.add('success');
   }
-  
+
   return isValid;
 }
 
@@ -176,7 +176,7 @@ function mostrarMensagemSucesso() {
   document.getElementById('formPlanta').reset();
   document.getElementById('preview-container').style.display = 'none';
   document.getElementById('file-name').textContent = 'Escolher arquivo';
-  
+
   // Remover classes de validação
   document.querySelectorAll('.error, .success').forEach(el => {
     el.classList.remove('error', 'success');
@@ -199,7 +199,7 @@ function voltarPagina() {
 function atualizarContador() {
   const observacoes = document.getElementById('observacoes');
   const contador = document.getElementById('char-counter');
-  
+
   observacoes.addEventListener('input', function() {
     contador.textContent = this.value.length;
   });

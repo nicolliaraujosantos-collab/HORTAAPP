@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -27,15 +26,8 @@
 						<span class="material-icons">eco</span>
 						Nome da Planta *
 					</label>
-					<input 
-						type="text" 
-						id="nomePlanta" 
-						name="nomePlanta" 
-						placeholder="Ex: Tomate, Alface, Cenoura..." 
-						required
-						minlength="2"
-						maxlength="50"
-						autocomplete="off">
+					<input type="text" id="nomePlanta" name="nomePlanta" placeholder="Ex: Tomate, Alface, Cenoura..." required
+						minlength="2" maxlength="50" autocomplete="off">
 					<span class="error-message" id="nomePlanta-error"></span>
 				</div>
 
@@ -44,12 +36,7 @@
 						<span class="material-icons">event</span>
 						Data do Plantio *
 					</label>
-					<input 
-						type="date" 
-						id="dataPlantio" 
-						name="dataPlantio" 
-						required
-						max="">
+					<input type="date" id="dataPlantio" name="dataPlantio" required max="">
 					<span class="error-message" id="dataPlantio-error"></span>
 				</div>
 
@@ -75,11 +62,7 @@
 						Foto da Planta
 					</label>
 					<div class="file-input-wrapper">
-						<input 
-							type="file" 
-							id="fotoPlanta" 
-							name="fotoPlanta" 
-							accept="image/jpeg,image/png,image/jpg,image/webp" 
+						<input type="file" id="fotoPlanta" name="fotoPlanta" accept="image/jpeg,image/png,image/jpg,image/webp"
 							onchange="previewImagem(event)">
 						<label for="fotoPlanta" class="file-label">
 							<span class="material-icons">cloud_upload</span>
@@ -100,11 +83,7 @@
 						<span class="material-icons">notes</span>
 						Observações
 					</label>
-					<textarea 
-						id="observacoes" 
-						name="observacoes" 
-						rows="5"
-						maxlength="500"
+					<textarea id="observacoes" name="observacoes" rows="5" maxlength="500"
 						placeholder="Adicione informações sobre rega, adubo, localização no jardim, etc."></textarea>
 					<small class="char-count"><span id="char-counter">0</span>/500 caracteres</small>
 				</div>
