@@ -24,6 +24,13 @@ header h1 {
   color: #088c48;
   font-size: 2.5em;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+header .subtitle {
+  color: #666;
+  font-size: 1.1em;
+  margin: 0;
 }
 
 main {
@@ -76,21 +83,63 @@ main {
 }
 
 .form-group input[type="file"] {
-  width: 100%;
-  padding: 10px;
+  display: none;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 20px;
   border: 2px dashed #088c48;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  background: #f0f9f4;
+  justify-content: center;
 }
 
-.form-group input[type="file"]:hover {
-  background-color: #f0f9f4;
+.file-label:hover {
+  background-color: #e0f5ec;
+  border-color: #06b782;
+  transform: translateY(-2px);
+}
+
+.file-label .material-icons {
+  font-size: 1.5em;
+  color: #088c48;
+}
+
+.file-label #file-name {
+  color: #088c48;
+  font-weight: 500;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #088c48;
 }
 
 #preview-container {
   margin-top: 15px;
   text-align: center;
+  position: relative;
 }
 
 #preview-imagem {
@@ -98,6 +147,62 @@ main {
   max-height: 300px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.remove-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.remove-image:hover {
+  background: rgba(255, 0, 0, 1);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 5px;
+  display: block;
+  min-height: 20px;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.85em;
+  display: block;
+  margin-top: 5px;
+}
+
+.char-count {
+  color: #666;
+  font-size: 0.85em;
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.form-group input.error,
+.form-group textarea.error,
+.form-group select.error {
+  border-color: #dc3545;
+}
+
+.form-group input.success,
+.form-group textarea.success,
+.form-group select.success {
+  border-color: #28a745;
 }
 
 .form-group textarea {

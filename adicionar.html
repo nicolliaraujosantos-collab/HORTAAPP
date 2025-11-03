@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -14,26 +15,58 @@
 <body>
 	<header>
 		<h1>🌱 Adicionar Nova Planta</h1>
+		<p class="subtitle">Registre suas plantas e acompanhe o crescimento</p>
 	</header>
 
 	<main>
 		<div class="form-container">
-			<form id="formPlanta" onsubmit="salvarPlanta(event)">
+			<form id="formPlanta" onsubmit="salvarPlanta(event)" novalidate>
 
 				<div class="form-group">
 					<label for="nomePlanta">
 						<span class="material-icons">eco</span>
-						Nome da Planta
+						Nome da Planta *
 					</label>
-					<input type="text" id="nomePlanta" name="nomePlanta" placeholder="Ex: Tomate, Alface, Cenoura..." required>
+					<input 
+						type="text" 
+						id="nomePlanta" 
+						name="nomePlanta" 
+						placeholder="Ex: Tomate, Alface, Cenoura..." 
+						required
+						minlength="2"
+						maxlength="50"
+						autocomplete="off">
+					<span class="error-message" id="nomePlanta-error"></span>
 				</div>
 
 				<div class="form-group">
 					<label for="dataPlantio">
 						<span class="material-icons">event</span>
-						Data do Plantio
+						Data do Plantio *
 					</label>
-					<input type="date" id="dataPlantio" name="dataPlantio" required>
+					<input 
+						type="date" 
+						id="dataPlantio" 
+						name="dataPlantio" 
+						required
+						max="">
+					<span class="error-message" id="dataPlantio-error"></span>
+				</div>
+
+				<div class="form-group">
+					<label for="categoria">
+						<span class="material-icons">category</span>
+						Categoria
+					</label>
+					<select id="categoria" name="categoria">
+						<option value="">Selecione uma categoria</option>
+						<option value="hortaliças">🥬 Hortaliças</option>
+						<option value="frutas">🍓 Frutas</option>
+						<option value="ervas">🌿 Ervas e Temperos</option>
+						<option value="legumes">🥕 Legumes</option>
+						<option value="flores">🌸 Flores</option>
+						<option value="outras">🌱 Outras</option>
+					</select>
 				</div>
 
 				<div class="form-group">
@@ -41,10 +74,25 @@
 						<span class="material-icons">add_photo_alternate</span>
 						Foto da Planta
 					</label>
-					<input type="file" id="fotoPlanta" name="fotoPlanta" accept="image/*" onchange="previewImagem(event)">
+					<div class="file-input-wrapper">
+						<input 
+							type="file" 
+							id="fotoPlanta" 
+							name="fotoPlanta" 
+							accept="image/jpeg,image/png,image/jpg,image/webp" 
+							onchange="previewImagem(event)">
+						<label for="fotoPlanta" class="file-label">
+							<span class="material-icons">cloud_upload</span>
+							<span id="file-name">Escolher arquivo</span>
+						</label>
+					</div>
 					<div id="preview-container" style="display: none;">
 						<img id="preview-imagem" alt="Preview da foto">
+						<button type="button" class="remove-image" onclick="removerImagem()">
+							<span class="material-icons">close</span>
+						</button>
 					</div>
+					<small class="hint">Formatos aceitos: JPG, PNG, WEBP (máx. 5MB)</small>
 				</div>
 
 				<div class="form-group">
@@ -52,14 +100,19 @@
 						<span class="material-icons">notes</span>
 						Observações
 					</label>
-					<textarea id="observacoes" name="observacoes" rows="5"
+					<textarea 
+						id="observacoes" 
+						name="observacoes" 
+						rows="5"
+						maxlength="500"
 						placeholder="Adicione informações sobre rega, adubo, localização no jardim, etc."></textarea>
+					<small class="char-count"><span id="char-counter">0</span>/500 caracteres</small>
 				</div>
 
 				<div class="button-group">
 					<button type="button" class="btn-secondary" onclick="voltarPagina()">
 						<span class="material-icons">arrow_back</span>
-						Voltar
+						Cancelar
 					</button>
 					<button type="submit" class="btn-primary">
 						<span class="material-icons">save</span>
