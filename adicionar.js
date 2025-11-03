@@ -7,12 +7,12 @@ function previewImagem(event) {
 
   if (file) {
     const reader = new FileReader();
-    
+
     reader.onload = function(e) {
       previewImagem.src = e.target.result;
       previewContainer.style.display = 'block';
     }
-    
+
     reader.readAsDataURL(file);
   } else {
     previewContainer.style.display = 'none';
@@ -27,14 +27,14 @@ function salvarPlanta(event) {
   const dataPlantio = document.getElementById('dataPlantio').value;
   const observacoes = document.getElementById('observacoes').value;
   const fotoInput = document.getElementById('fotoPlanta');
-  
+
   // Obter foto em base64
   let fotoBase64 = '';
   if (fotoInput.files && fotoInput.files[0]) {
     const reader = new FileReader();
     reader.onload = function(e) {
       fotoBase64 = e.target.result;
-      
+
       // Criar objeto da planta
       const novaPlanta = {
         nome: nomePlanta,
@@ -57,7 +57,7 @@ function salvarPlanta(event) {
       observacoes: observacoes,
       dataCadastro: new Date().toISOString()
     };
-    
+
     salvarNoLocalStorage(novaPlanta);
   }
 }
@@ -66,13 +66,13 @@ function salvarPlanta(event) {
 function salvarNoLocalStorage(planta) {
   // Recuperar plantas existentes
   let plantas = JSON.parse(localStorage.getItem('plantas')) || [];
-  
+
   // Adicionar nova planta
   plantas.push(planta);
-  
+
   // Salvar de volta no localStorage
   localStorage.setItem('plantas', JSON.stringify(plantas));
-  
+
   // Mostrar mensagem de sucesso
   mostrarMensagemSucesso();
 }
@@ -86,14 +86,14 @@ function mostrarMensagemSucesso() {
     <span class="material-icons">check_circle</span>
     <span>Planta adicionada com sucesso!</span>
   `;
-  
+
   const formContainer = document.querySelector('.form-container');
   formContainer.insertBefore(mensagem, formContainer.firstChild);
-  
+
   // Limpar formulário
   document.getElementById('formPlanta').reset();
   document.getElementById('preview-container').style.display = 'none';
-  
+
   // Redirecionar após 2 segundos
   setTimeout(() => {
     window.location.href = 'listaplanta.html';
