@@ -1,7 +1,7 @@
 
 // Função para adicionar nova planta
 function adicionarPlanta() {
-  alert('🌱 Funcionalidade de adicionar planta em desenvolvimento!\n\nEm breve você poderá cadastrar novas plantas com:\n- Nome da planta\n- Data de plantio\n- Foto\n- Observações');
+  window.location.href = 'adicionar.html';
 }
 
 // Calcular dias desde o plantio
