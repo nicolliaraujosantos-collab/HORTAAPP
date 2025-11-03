@@ -1,0 +1,216 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: #088c48;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Statistics Section */
+.statistics {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.statistics h2 {
+  color: #088c48;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #06b782 0%, #088c48 100%);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1em;
+  opacity: 0.9;
+}
+
+/* Plants List Section */
+.plantas-list {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
+}
+
+.plantas-list h2 {
+  color: #088c48;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.plant-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.plant-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.plant-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.plant-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.plant-card:hover .plant-image {
+  transform: scale(1.1);
+}
+
+.plant-info {
+  padding: 20px;
+}
+
+.plant-name {
+  color: #088c48;
+  font-size: 1.4em;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.plant-date,
+.plant-days {
+  color: #555;
+  font-size: 0.95em;
+  margin: 8px 0;
+}
+
+.plant-status {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.status-growing {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-new {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status-ready {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Floating Action Button */
+.fab-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #088c48 !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.fab-button:hover {
+  transform: scale(1.1);
+  background: #06b782 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  .statistics h2,
+  .plantas-list h2 {
+    font-size: 1.4em;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .fab-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}

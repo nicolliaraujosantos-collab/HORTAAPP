@@ -1,69 +1,101 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-	<title>Document</title>
+	<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+	<title>Horta Digital - Plantas</title>
 	<link href="listaplanta.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-	<div class="mdc-card">
-		<ul class="mdc-image-list my-image-list">
-			<li class="mdc-image-list__item">
-				<div class="mdc-image-list__image-aspect-container">
-					<img class="mdc-image-list__image" src="./img/images (5).jfif">
+	<header>
+		<h1>🌱 RAÍZES DIGITAIS - MINHA HORTA</h1>
+	</header>
+
+	<main>
+		<section class="statistics">
+			<h2>📊 Estatísticas da Horta</h2>
+			<div class="stats-container">
+				<div class="stat-card">
+					<span class="stat-number" id="total-plantas">4</span>
+					<span class="stat-label">Plantas Cadastradas</span>
 				</div>
-				<div class="mdc-image-list__supporting">
-					<span class="mdc-image-list__label">COUVE-CHINESA</span>
+				<div class="stat-card">
+					<span class="stat-number" id="plantas-mes">2</span>
+					<span class="stat-label">Plantadas este Mês</span>
 				</div>
-			</li>
-
-		</ul>
-	</div>
-
-	<div class="mdc-card">
-		<ul class="mdc-image-list my-image-list">
-			<li class="mdc-image-list__item">
-				<div class="mdc-image-list__image-aspect-container">
-					<img class="mdc-image-list__image" src="./img/images (1).jfif" <span>
-					class="mdc-image-list__label">COUVE</span>
+				<div class="stat-card">
+					<span class="stat-number" id="dias-media">15</span>
+					<span class="stat-label">Dias Médios de Cultivo</span>
 				</div>
-			</li>
-
-		</ul>
-	</div>
-
-	<div class="mdc-card">
-		<ul class="mdc-image-list my-image-list">
-			<li class="mdc-image-list__item">
-				<div class="mdc-image-list__image-aspect-container">
-					<img class="mdc-image-list__image" src="./img/images (2).jfif" <span>
-						class="mdc-image-list__label">ALFACE-ROMANA</span>
-				</div>
-			</li>
-
-		</ul>
-	</div>
-
-
-	<ul class="mdc-image-list mdc-image-list--masonry my-masonry-image-list">
-		<li class="mdc-image-list__item">
-			<img class="mdc-image-list__image" src="./img/images (3).jfif">
-			<div class="mdc-image-list__supporting">
-				<span class="mdc-image-list__label">MOSTARDA-HORTA</span>
 			</div>
-		</li>
+		</section>
 
-	</ul>
+		<section class="plantas-list">
+			<h2>🌿 Minhas Plantas</h2>
+			<div class="grid-container">
+				
+				<div class="mdc-card plant-card">
+					<div class="plant-image-container">
+						<img class="plant-image" src="./img/images (5).jfif" alt="Couve-Chinesa">
+					</div>
+					<div class="plant-info">
+						<h3 class="plant-name">COUVE-CHINESA</h3>
+						<p class="plant-date">📅 Plantio: 01/12/2024</p>
+						<p class="plant-days">⏱️ 28 dias de cultivo</p>
+						<p class="plant-status status-growing">Em crescimento</p>
+					</div>
+				</div>
 
-	<button class="mdc-fab mdc-fab--extended">
+				<div class="mdc-card plant-card">
+					<div class="plant-image-container">
+						<img class="plant-image" src="./img/images (1).jfif" alt="Couve">
+					</div>
+					<div class="plant-info">
+						<h3 class="plant-name">COUVE</h3>
+						<p class="plant-date">📅 Plantio: 05/12/2024</p>
+						<p class="plant-days">⏱️ 24 dias de cultivo</p>
+						<p class="plant-status status-growing">Em crescimento</p>
+					</div>
+				</div>
+
+				<div class="mdc-card plant-card">
+					<div class="plant-image-container">
+						<img class="plant-image" src="./img/images (2).jfif" alt="Alface Romana">
+					</div>
+					<div class="plant-info">
+						<h3 class="plant-name">ALFACE-ROMANA</h3>
+						<p class="plant-date">📅 Plantio: 15/12/2024</p>
+						<p class="plant-days">⏱️ 14 dias de cultivo</p>
+						<p class="plant-status status-new">Recente</p>
+					</div>
+				</div>
+
+				<div class="mdc-card plant-card">
+					<div class="plant-image-container">
+						<img class="plant-image" src="./img/images (3).jfif" alt="Mostarda da Horta">
+					</div>
+					<div class="plant-info">
+						<h3 class="plant-name">MOSTARDA-HORTA</h3>
+						<p class="plant-date">📅 Plantio: 20/12/2024</p>
+						<p class="plant-days">⏱️ 9 dias de cultivo</p>
+						<p class="plant-status status-new">Recente</p>
+					</div>
+				</div>
+
+			</div>
+		</section>
+	</main>
+
+	<button class="mdc-fab mdc-fab--extended fab-button" onclick="adicionarPlanta()">
 		<div class="mdc-fab__ripple"></div>
 		<span class="material-icons mdc-fab__icon">add</span>
-		<span class="mdc-fab__label">Create</span>
+		<span class="mdc-fab__label">Adicionar Planta</span>
 	</button>
 
 	<script src="listaplanta.js"></script>
