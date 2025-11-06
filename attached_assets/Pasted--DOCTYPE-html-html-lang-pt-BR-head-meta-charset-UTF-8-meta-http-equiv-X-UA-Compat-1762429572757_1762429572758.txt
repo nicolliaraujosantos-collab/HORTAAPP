@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <title>Cadastro - Raízes Digitais</title>
+  <title>Login - Raízes Digitais</title>
 </head>
 
 <body>
@@ -21,18 +21,10 @@
       </div>
 
       <div class="login-form-container">
-        <h2>Criar Conta</h2>
-        <p class="form-subtitle">Preencha os dados para se cadastrar</p>
+        <h2>Bem-vindo</h2>
+        <p class="form-subtitle">Entre com suas credenciais</p>
 
-        <form id="cadastroForm" onsubmit="return false;">
-          <div class="form-group">
-            <label for="nome">
-              <span class="material-icons">person</span>
-              Nome Completo
-            </label>
-            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="name">
-          </div>
-
+        <form id="loginForm" onsubmit="return false;">
           <div class="form-group">
             <label for="email">
               <span class="material-icons">email</span>
@@ -46,34 +38,31 @@
               <span class="material-icons">lock</span>
               Senha
             </label>
-            <input type="password" id="senha" name="senha" placeholder="••••••••" required autocomplete="new-password"
-              minlength="6">
-          </div>
-
-          <div class="form-group">
-            <label for="confirmarSenha">
-              <span class="material-icons">lock_outline</span>
-              Confirmar Senha
-            </label>
-            <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="••••••••" required
-              autocomplete="new-password" minlength="6">
+            <input type="password" id="senha" name="senha" placeholder="••••••••" required
+              autocomplete="current-password">
           </div>
 
           <div class="form-options">
             <label class="checkbox-label">
-              <input type="checkbox" id="termos" required>
-              <span>Aceito os <a href="#" style="color: var(--primary-color);">termos e condições</a></span>
+              <input type="checkbox" id="lembrar">
+              <span>Lembrar-me</span>
             </label>
+            <a href="#" class="forgot-password">Esqueceu a senha?</a>
           </div>
 
-          <button type="button" class="btn-login" onclick="validaCadastro()">
-            <span class="material-icons">person_add</span>
-            Cadastrar
+          <button type="button" class="btn-login" onclick="validaLogin()">
+            <span class="material-icons">login</span>
+            Entrar
           </button>
         </form>
 
+        <div class="demo-credentials">
+          <p><strong>Credenciais de demonstração:</strong></p>
+          <p>Email: admin@admin.com</p>
+          <p>Senha: admin</p>
+        </div>
         <div class="register-link">
-          <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
+          <p>Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
         </div>
       </div>
     </div>
@@ -83,7 +72,7 @@
     </div>
   </div>
 
-  <script src="cadastro.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
